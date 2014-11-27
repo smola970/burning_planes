@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where :name => params[:search]
+    @users = User.where :username => params[:search]
   end
 
   def new
@@ -15,10 +15,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user.name = params[:name]
+    @user.username = params[:username]
       if @user.save
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to '/'
       else
         render :new
       end
