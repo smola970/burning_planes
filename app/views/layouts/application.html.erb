@@ -6,6 +6,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <li>
+  <% if logged_in? %>
+    <%= link_to 'Logout', login_path, :method => :delete, class: 'btn btn-danger' %>
+    <% end %>
+</li>
+</nav>
 
 <%= yield %>
 
