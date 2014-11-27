@@ -13,14 +13,26 @@ class FlightsController < ApplicationController
 
 	def show
 		@flight = Flight.find(params[:id])
-		@rows = @flight.rows
-		columns = @flight.columns
+		num_of_rows = @flight.airplane.rows
+		num_of_columns = @flight.airplane.columns
 
+		rows = (1..num_of_rows).to_a
+		rows.map {|i| i.to_s}
+		columns = ('a'..'z').to_a.first(num_of_columns)
 
-		@seat_letter =
+		@seats_array = []
+
+		for r in 0...(rows.length)
+
+	  	for c in 0...(columns.length)
+	  		@seats_array << "#{rows[r]}#{columns[c]}"
+	  	end
+				
+		end
+
 	end
 
-	def search
+	def index
 		@flights = Flight.all
 	end
 
