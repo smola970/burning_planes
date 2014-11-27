@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/search' => 'flights#search'
 
+  # post '/reservation/:id' => 'flights#reservation', as:
+
   resources :flights
   resources :airplanes
 end

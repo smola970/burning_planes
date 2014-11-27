@@ -3,7 +3,8 @@
 
 <ul>
 	<% @flights.each do |flight|  %>
-		<a href="">flight number:<%= flight.flight_number %> --- origin: <%= flight.origin %> --- destination <%= flight.destination %> --- departure: <%= flight.date %>  </a>
+		<li><%= flight.flight_number %> --- <%= flight.origin %> to <%= flight.destination %> --- departs: <%= flight.date %> --- <%= link_to 'See flight details', flight_path(flight.id) %> </li>
+
 		
 	<% end %>
 

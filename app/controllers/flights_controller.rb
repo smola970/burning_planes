@@ -16,6 +16,11 @@ class FlightsController < ApplicationController
 		@flights = Flight.all
 	end
 
+	def reservation
+		# get current user, seat, and flight
+
+	end
+
 
 	private
 
