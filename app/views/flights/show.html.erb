@@ -22,10 +22,14 @@
 </div>
 
 <!-- link to the reservation backend -->
+
+<div id="showSeat"><p></p></div>
 <button>Reserve Flight</button>
 
 <%= link_to 'Back', :back  %>
 
-
+<script>
+  var seats = <%= @seats %>
+</script>
 
 

@@ -13,12 +13,15 @@ class FlightsController < ApplicationController
 
 	def show
 		@flight = Flight.find(params[:id])
-		@rows = @flight.rows
+		plane_id = @flight.plane_id
+		@rows = @flight.airplane.rows
 		columns = @flight.columns
 
 
-		@seat_letter =
+		@seats
 	end
+
+
 
 	def search
 		@flights = Flight.all
