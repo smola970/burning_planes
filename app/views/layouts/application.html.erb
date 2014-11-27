@@ -3,12 +3,22 @@
 <head>
   <title>BurningPlanes</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+<script type="template/handlebars" id="seatView">
+  <div><p> {{ body }} </p></div>
+</script>
+
+<script>
+  var App = {};
+  App.Views = {};
+  App.Models = {};
+  App.Collections = {};
+</script>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
