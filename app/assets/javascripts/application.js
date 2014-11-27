@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require handlebars
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+
+

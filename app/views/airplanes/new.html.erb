@@ -1,0 +1,18 @@
+<h1>Create a new Airplane</h1>
+
+<%= form_tag '/airplanes', method: 'POST'  do%>
+
+<%= label_tag 'name', 'Name' %>
+<%= text_field_tag 'name' %><br>
+
+<%= label_tag 'rows', 'Rows' %>
+<%= text_field_tag 'rows' %><br>
+
+<%= label_tag 'columns', 'Columns' %>
+<%= text_field_tag 'columns' %><br>
+
+
+<%= submit_tag 'Create Airplane' %>
+
+
+<% end %>
