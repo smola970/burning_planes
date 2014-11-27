@@ -7,4 +7,10 @@ class AirplanesController < ApplicationController
 
   end
 
+  def show/:name
+
+    @airplane = Airplane.find(params[:name])
+
+  end
+
 end
