@@ -1,0 +1,10 @@
+<h1>Search Flights</h1>
+
+
+<ul>
+	<% @flights.each do |flight|  %>
+		<a href="">flight number:<%= flight.flight_number %> --- origin: <%= flight.origin %> --- destination <%= flight.destination %> --- departure: <%= flight.date %>  </a>
+		
+	<% end %>
+
+</ul>>

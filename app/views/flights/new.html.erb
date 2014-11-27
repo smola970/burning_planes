@@ -1,6 +1,6 @@
 <h1>Create a new flight</h1>
 
-<%= form_for @flight, url: '/flights', method: 'POST' do |f|%>
+<%= form_for :flight, url: '/flights', method: 'POST' do |f|%>
 
 <%= f.label 'flight_number', 'Flight Number' %>
 <%= f.text_field :flight_number %><br>

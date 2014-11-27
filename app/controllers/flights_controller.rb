@@ -12,6 +12,10 @@ class FlightsController < ApplicationController
 		@flight = Flight.find(params[:id])
 	end
 
+	def search
+		@flights = Flight.all
+	end
+
 
 	private
 

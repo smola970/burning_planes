@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#new'
   post '/sign_up' => 'users#create'
 
+  get '/search' => 'flights#search'
+
   resources :flights
   resources :airplanes
 end
