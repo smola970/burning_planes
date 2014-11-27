@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
 	def new
+		@airplanes = Airplane.all
 	end
 
 	def create
@@ -25,7 +26,7 @@ class FlightsController < ApplicationController
 	private
 
 	def flight_params
-		 params.require(:flight).permit(:flight_number, :origin, :destination, :date)		
+		 params.require(:flight).permit(:flight_number, :origin, :destination, :date, :plane_id)		
 	end
 
 end

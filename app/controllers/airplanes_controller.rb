@@ -4,13 +4,21 @@ class AirplanesController < ApplicationController
   end
 
   def create
+  	airplane = Airplane.new
+  	airplane.name = params[:name]
+  	airplane.rows = params[:rows]
+  	airplane.columns = params[:columns]
+  	airplane.save
+
+  	redirect_to airplane_path(airplane.id)
+  end
+
+  def show
+    @airplane = Airplane.find(params[:id])
 
   end
 
-  def show/:name
 
-    @airplane = Airplane.find(params[:name])
 
-  end
 
 end
