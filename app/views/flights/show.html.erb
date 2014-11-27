@@ -11,7 +11,13 @@
 
 <h2>Seats:</h2>
 <div class="seats">
-
+<!-- 		<div class="seat">
+			
+		</div>
+		<div class="seat">
+			
+		</div> -->
+	</div>
 </div>
 
 <!-- link to the reservation backend -->
@@ -22,13 +28,20 @@
 <%= link_to 'Back', :back  %>
 
 <script>
-  var seats = ['1a', '1b', '2a', '2b']
-  _.each(seats, function() {
-    var seat = $('<div>hello</div>');
+  var seats = <%== @seats_array %>
 
-    var seatsDiv = $('.seats');
-    seatsDiv.append(seat);
-  })
+  _.each(seats, function(seat, index) {
+
+  
+
+	    var seat = $('<div></div>').addClass('seat').html(seat);
+
+	    var seatsDiv = $('.seats');
+	    seatsDiv.append(seat);
+
+
+
+  });
 </script>
 
 

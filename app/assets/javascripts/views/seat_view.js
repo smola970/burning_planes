@@ -2,7 +2,7 @@ var App = App || {};
 
 App.Views.SeatView = Backbone.View.extend({
 
-  tagName: 'div'
+  tagName: 'div',
 
   events: {
     'click': selectSeat
