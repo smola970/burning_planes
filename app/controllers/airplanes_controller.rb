@@ -1,6 +1,4 @@
 class AirplanesController < ApplicationController
-  before_action :authenticate
-
   def new
 
   end

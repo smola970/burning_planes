@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate(params[:password])
       # correct password
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to root_path
     else
       # incorrect password
       redirect_to login_path, :notice => 'incorrect login or password'

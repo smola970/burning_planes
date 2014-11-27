@@ -14,15 +14,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-
+    @user = User.new
+    @user.username = params[:username]
       if @user.save
         session[:user_id] = @user.id
         redirect_to '/'
       else
         render :new
       end
-      # raise
   end
 
   def show
