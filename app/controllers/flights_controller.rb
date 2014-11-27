@@ -1,12 +1,15 @@
 class FlightsController < ApplicationController
 	def new
-		@flight = Flight.new
 	end
 
 	def create
 		flight = Flight.new(flight_params)
 		flight.save
-		raise
+		redirect_to flight_path(flight.id)
+	end
+
+	def show
+		@flight = Flight.find(params[:id])
 	end
 
 
