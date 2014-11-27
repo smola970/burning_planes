@@ -21,6 +21,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :logged_in?
 
+  # def admin?
+  #   if current_user.admin = true
+  #     true
+  #   else
+  #     false
+  # end
+
   def authenticate
     redirect_to login_path unless logged_in?
 
