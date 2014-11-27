@@ -13,6 +13,11 @@ class FlightsController < ApplicationController
 
 	def show
 		@flight = Flight.find(params[:id])
+		@rows = @flight.rows
+		columns = @flight.columns
+
+
+		@seat_letter =
 	end
 
 	def search
@@ -29,7 +34,7 @@ class FlightsController < ApplicationController
 
 	def flight_params
 
-		 params.require(:flight).permit(:flight_number, :origin, :destination, :date, :plane_id)		
+		 params.require(:flight).permit(:flight_number, :origin, :destination, :date, :plane_id)
 
 	end
 
