@@ -1,4 +1,6 @@
 class FlightsController < ApplicationController
+  before_action :authenticate
+
 	def new
 		@airplanes = Airplane.all
 	end
@@ -26,7 +28,9 @@ class FlightsController < ApplicationController
 	private
 
 	def flight_params
+
 		 params.require(:flight).permit(:flight_number, :origin, :destination, :date, :plane_id)		
+
 	end
 
 end
