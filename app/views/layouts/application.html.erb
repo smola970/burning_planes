@@ -4,12 +4,21 @@
   <title>BurningPlanes</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+<script>
+  var App = {};
+  App.Views = {};
+  App.Models = {};
+  App.Collections = {};
+</script>
+  
+  <%= javascript_include_tag 'application' %>
 </head>
 <body>
 <nav>
   <li>
   <% if logged_in? %>
     <%= link_to 'Logout', login_path, :method => :delete, class: 'btn btn-danger' %>
+
     <% end %>
 </li>
 </nav>
@@ -17,15 +26,8 @@
 <%= yield %>
 
 <script type="template/handlebars" id="seatView">
-  <div><p> {{ body }} </p></div>
+  <p> {{ body }} </p>
 </script>
 
-<script>
-  var App = {};
-  App.Views = {};
-  App.Models = {};
-  App.Collections = {};
-</script>
-  <%= javascript_include_tag 'application' %>
 </body>
 </html>
