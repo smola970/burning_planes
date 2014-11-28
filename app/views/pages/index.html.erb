@@ -1,16 +1,15 @@
 <h1>Welcome to Burning Planes</h1>
 
+<% if current_user.admin == true %>
 <h1>Admin</h1>
-
-<%# if current_user.admin == true %>
 <div>
-<%= link_to 'Create New Airplane', new_airplane_path  %>
-</div>
-<%# end %>
+<%= link_to 'Create New Airplane', new_airplane_path  %></div>
 
 <div>
 <%= link_to 'Create New Flight', new_flight_path  %>
 </div>
+<% end %>
+
 
 
 <h1>Users</h1>
