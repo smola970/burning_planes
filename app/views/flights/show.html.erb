@@ -6,27 +6,25 @@
 <p>destination: <%= @flight.destination  %></p>
 <p>date: <%= @flight.date  %></p>
 <p>airplane: <%= @flight.airplane.name  %></p>
-
-
+<p hidden><%= @flight.id %></p>
 
 <h2>Seats:</h2>
 <div class="seats">
 <!-- 		<div class="seat">
-			
+
 		</div>
 		<div class="seat">
-			
+
 		</div> -->
 	</div>
 </div>
 
 <!-- link to the reservation backend -->
 
-<div id="showSeat">
-  <p>
-  </p>
-</div>
-<button>Reserve Flight</button>
+<div id="showSeat"><p></p></div>
+
+<%= button_to "Make Reservation", { :controller => "reservations", :action => "create"} %>
+
 
 <%= link_to 'Back', :back  %>
 
