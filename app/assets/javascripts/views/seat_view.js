@@ -10,7 +10,7 @@ App.Views.SeatView = Backbone.View.extend({
 
   render: function() {
 
-    var template = '<p>{{ seatNumber }}</p>';
+    var template = '<p class="seat">{{ seatNumber }}</p>';
     var templateFunction = Handlebars.compile(template);
     var html = templateFunction({ seatNumber: this.model });
 
@@ -22,6 +22,11 @@ App.Views.SeatView = Backbone.View.extend({
 
   selectSeat: function() {
     console.log('select seat: ', this.model)
+    var showSeat = '<p> You chose seat: ' + this.model + '</p>';
+    $('#showSeat').html(showSeat);
+    this.$el.parent().find('.seat').removeClass('highlight');
+    this.$('.seat').addClass('highlight');
+
   }
 
 });
