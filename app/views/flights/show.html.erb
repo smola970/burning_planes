@@ -28,20 +28,22 @@
 <%= link_to 'Back', :back  %>
 
 <script>
-  var seats = <%== @seats_array %>
-
-  _.each(seats, function(seat, index) {
-
+	// we have array of seat numbers
+  var seatNumbers = <%== @seats_array %>
 
 
-	    var seat = $('<div></div>').addClass('seat').html(seat);
+  // we want to loop through them
+  _.each(seatNumbers, function(seatNumber) {
 
-	    var seatsDiv = $('.seats');
-	    seatsDiv.append(seat);
+  	// create new seat view and pass in the seatNumber
+  	var view = new App.Views.SeatView({ model: seatNumber });
+  	// tell the view to render the html
+  	//view.render();
+  	// append the seat html to #seats, el is the html
+  	$('.seats').append(view.render().el);
+  })
 
 
-
-  });
 </script>
 
 
